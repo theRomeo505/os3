@@ -420,6 +420,7 @@ public class Kernel extends Thread
     {
       controlPanel.pageFaultValueLabel.setText( "NO" );
     }
+
     if ( instruct.inst.startsWith( "READ" ) )
     {
       Page page = ( Page ) memVector.elementAt( Virtual2Physical.pageNum( instruct.addr , virtPageNum , block ) );
@@ -449,6 +450,15 @@ public class Kernel extends Thread
         {
           System.out.println( "READ " + Long.toString( instruct.addr , addressradix ) + " ... okay" );
         }
+        ///
+        for (int k=0;k<lru.size();k++){
+          if (lru.get(k).id==Virtual2Physical.pageNum( instruct.addr , virtPageNum , block )){
+            Page page1=lru.get(k);
+            lru.remove(k);
+            lru.add(page1);
+          }
+        }
+        ////
       }
     }
     if ( instruct.inst.startsWith( "WRITE" ) ) 
@@ -478,6 +488,13 @@ public class Kernel extends Thread
         {
           System.out.println( "WRITE " + Long.toString(instruct.addr , addressradix) + " ... okay" );
         }
+        for (int k=0;k<lru.size();k++){
+          if (lru.get(k).id==Virtual2Physical.pageNum( instruct.addr , virtPageNum , block )){
+            Page page1=lru.get(k);
+            lru.remove(k);
+            lru.add(page1);
+          }
+        }
       }
     }
     for ( i = 0; i < virtPageNum; i++ ) 
@@ -497,6 +514,12 @@ public class Kernel extends Thread
     controlPanel.timeValueLabel.setText( Integer.toString( runs*10 ) + " (ns)" );
     /////////
 
+
+
+//    for (int kk=0;kk<lru.size();kk++){
+//      System.out.print(lru.get(kk).id+" ");
+//    }
+    System.out.println();
   }
 
   public void reset() {

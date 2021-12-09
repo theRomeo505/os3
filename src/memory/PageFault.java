@@ -20,13 +20,8 @@ public class PageFault {
 
     Page page=lru.get(0);
     lru.remove(0);
-    while (page.M==1 || page.R==1) {
 
-      lru.add(page);
 
-      page = (Page) lru.get(0);
-      lru.remove(0);
-    }
 
     Page replacePage = ( Page ) mem.elementAt( replacePageNum );
     controlPanel.removePhysicalPage( page.id );
