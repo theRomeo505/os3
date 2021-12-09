@@ -456,6 +456,7 @@ public class Kernel extends Thread
             Page page1=lru.get(k);
             lru.remove(k);
             lru.add(page1);
+            break;
           }
         }
         ////
@@ -493,6 +494,7 @@ public class Kernel extends Thread
             Page page1=lru.get(k);
             lru.remove(k);
             lru.add(page1);
+            break;
           }
         }
       }

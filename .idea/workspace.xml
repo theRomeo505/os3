@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f654298-2eaf-4c12-9725-52b4d7519517" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/Kernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Kernel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/Kernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Kernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/PageFault.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/PageFault.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/PageFault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/PageFault.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
